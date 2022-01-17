@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.marondal.lecture.dao.ExampleListDAO">
+    <select id="selectExampleList" parameterType="int" resultType="com.marondal.lecture.model.ExampleList">
+        SELECT
+            `id`
+            , `lectureId`
+            , `lectureListId`
+            , `order`
+            , `subject`
+            , `userId`
+            , `author`
+            , `filePath`
+            , `createdAt`
+            , `updatedAt`
+        FROM
+            `exampleList`
+        WHERE
+            `id` = #{id}
+    </select>
+
+ </mapper>

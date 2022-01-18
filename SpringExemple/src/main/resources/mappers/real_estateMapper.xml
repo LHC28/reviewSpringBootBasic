@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.LHC28.ex.Lesson02.dao.Real_estateDAO">
+	<select id="selectRealEstate" resultType="com.LHC28.ex.Lesson02.model.Real_estate">
+		SELECT
+			*
+		FROM
+			`real_estate`
+		WHERE
+			id=#{id}
+	</select>
+	<select id="selectRealEstateByRentPrice" resultType="com.LHC28.ex.Lesson02.model.Real_estate">
+		SELECT
+			*
+		FROM
+			`real_estate`
+		WHERE
+			rentPrice=#{rentPrice}
+	</select>
+	<select id="selectRealEstateByAreaAndPrice" resultType="com.LHC28.ex.Lesson02.model.Real_estate">
+		SELECT
+			*
+		FROM
+			`real_estate`
+		WHERE
+			<![CDATA[
+			`area` >= #{area}
+			and `price` <= #{price}
+			 ]]>
+		ORDER BY `id` DESC
+	</select>
+	<update id="updateById" parameterType="map">
+		UPDATE `real_estate`
+		SET
+			price=#{price}
+		WHERE
+			id=#{id}
+	</update>
+	<delete id="deleteById" parameterType="int">
+		DELETE
+		FROM `real_estate`
+		WHERE `id` = #{id}
+	</delete>
+</mapper>

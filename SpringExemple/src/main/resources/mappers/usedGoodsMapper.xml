@@ -2,23 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
- <mapper namespace="com.marondal.lecture.dao.ExampleListDAO">
-    <select id="selectExampleList" parameterType="int" resultType="com.marondal.lecture.model.ExampleList">
+ <mapper namespace="com.LHC28.ex.Lesson02.dao.UsedGoodsDAO">
+    <select id="selectUsedGoodsList" parameterType="int" resultType="com.LHC28.ex.Lesson02.model.UsedGoods">
         SELECT
-            `id`
-            , `lectureId`
-            , `lectureListId`
-            , `order`
-            , `subject`
-            , `userId`
-            , `author`
-            , `filePath`
-            , `createdAt`
-            , `updatedAt`
-        FROM
-            `exampleList`
-        WHERE
-            `id` = #{id}
+			*
+		FROM
+			`used_goods`
     </select>
-
  </mapper>

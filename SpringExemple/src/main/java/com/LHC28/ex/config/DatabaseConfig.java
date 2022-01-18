@@ -13,15 +13,14 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @Configuration
 @MapperScan(basePackages="com.LHC28.*")  // interface(mapper)가 있는 패키지 경로
 public class DatabaseConfig {
-	
-	 @Bean
-	    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
-	        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-	        sessionFactory.setDataSource(dataSource);
-
-	        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
-	        sessionFactory.setMapperLocations(res);
-
-	        return sessionFactory.getObject();
-	    }
+	@Bean
+	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+		sessionFactory.setDataSource(dataSource);
+			
+		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
+		sessionFactory.setMapperLocations(res);
+			
+		return sessionFactory.getObject();
+	}
 }

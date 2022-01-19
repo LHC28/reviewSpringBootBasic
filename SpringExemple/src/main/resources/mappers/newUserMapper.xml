@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.LHC28.ex.lesson04.dao.NewUserDAO">
+	<insert id="insertNewUser" parameterType="map">
+		INSERT INTO `new_user`
+		(
+			`name`
+			, `yyyymmdd`
+			, `introduce`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES
+		(
+			#{name}
+			, #{yyyymmdd}
+			, #{introduce}
+			, #{email}
+			, NOW()
+			, NOW()
+		)
+	</insert>
+	<select id="selectLastUser" resultType="com.LHC28.ex.lesson04.model.NewUser">
+		SELECT 
+			`id`
+			, `name`
+			, `yyyymmdd`
+			, `introduce`
+			, `email`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`new_user`
+		ORDER BY `id` DESC
+		LIMIT 1
+	</select>
+</mapper>

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.navBox {width:180px; height:1000px;}
+#navTitle {width:180px; height:50px;}
+.navTitleLogo {color:white; font-weight:bold;}
+.navFont {color:white;}
+.navFont:link{color:white; text-decoration:none;}
+.navFont:visited{color:white; text-decoration:none;}
+.navFont:hover{color:white; text-decoration:none;}
+.navFont:active {color:white; text-decoration:none;}
+section {width:1000px; height:1000px;}
+footer {height:100px;}
+.footerLogo {width:180px;}
+.footerFont {color:gray; font-size:20px;}
+.box {white-space:nowrap;}

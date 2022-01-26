@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.LHC28.ex.quiz06.dao.FavoriteDAO">
+ 	<insert id="insertFavorite" parameterType="map">
+ 		INSERT INTO `favorite`
+ 		(
+ 			`name`
+ 			,`address`
+ 			,`createdAt`
+ 			,`updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{name}
+ 			,#{address}
+ 			,NOW()
+ 			,NOW()
+ 		)
+ 	</insert>
+ 	<select id="selectFavoriteList" resultType="com.LHC28.ex.quiz06.model.Favorite">
+ 		SELECT
+	 		 `id`
+	 		 ,`name`
+	 		 ,`address`
+	 		 ,`createdAt`
+	 		 ,`updatedAt`
+ 		FROM
+ 			`favorite`
+ 	</select>
+ 	<select id="selectFavoriteByAddress" resultType="boolean">
+ 		SELECT
+	 		 COUNT(*)
+ 		FROM
+ 			`favorite`
+ 		WHERE
+ 			`address` = #{address}
+ 	</select>
+ 	<delete id="deleteFavorite" parameterType="int">
+ 		DELETE
+ 		FROM
+ 			`favorite`
+ 		WHERE
+ 			`id` = #{favoriteId}
+ 	</delete>
+ </mapper>

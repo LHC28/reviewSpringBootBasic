@@ -1,0 +1,24 @@
+@charset "UTF-8";
+header {height:100px;}
+.titleFont{color:black;}
+nav {height:50px; background-color: rgb(205,133,62);}
+#banner {height:400px;}
+#contents{height:250px;}
+#reservationBox {background-color:rgb(161,82,44);}
+a:hover {text-decoration:none;}
+a:link {text-decoration:none; color:white;}
+a:visited{text-decoration:none; color:white;}
+a:active {text-decoration:none; color:white;}
+.reservationBoxFont {color:white; font-size:40px; font-weight:100;}
+#loginBox{background-color:rgb(209,106,30);}
+.loginBoxFont1 {color:white; font-size:20px;}
+.loginBoxFont2 {color:white; font-size:15px;}
+.input-form {width:280px; height:30px;}
+#phoneNumberBox{background-color:rgb(161,82,44);}
+.phoneNumberBoxFont {color:white; font-size:30px;}
+footer {height:100px; color:rgb(182,182,182); font-size:10px; font-weight:bold;}
+.navFont {color:white; font-weight:bold;}
+
+.inputFormFont {font-size:15px;}
+.inputForm {width:300px; height:15px;}
+.reservationBtn {width:300px;}
